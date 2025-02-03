@@ -1,14 +1,37 @@
-pub fn add(left: u64, right: u64) -> u64 {
-    left + right
-}
+mod definition;
 
-#[cfg(test)]
-mod tests {
-    use super::*;
+mod no1;
+mod no49;
+mod no128;
 
-    #[test]
-    fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
-    }
-}
+mod no283;
+mod no11;
+mod no15;
+mod no42;
+
+mod no3;
+mod no438;
+
+mod no560;
+mod no239;
+mod no76;
+
+mod no53;
+mod no56;
+mod no189;
+mod no238;
+mod no41;
+
+mod no73;
+mod no54;
+mod no48;
+mod no240;
+
+mod no206;
+mod no234;
+mod no21;
+mod no2;
+mod no19;
+mod no24;
+mod no25;
+mod no148;
