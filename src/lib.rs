@@ -35,3 +35,12 @@ mod no19;
 mod no24;
 mod no25;
 mod no148;
+mod no23;
+mod no146;
+
+mod no94;
+mod no104;
+mod no226;
+mod no101;
+mod no543;
+mod no102;
