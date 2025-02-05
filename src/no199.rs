@@ -7,18 +7,17 @@ struct Solution;
 
 #[allow(dead_code)]
 impl Solution {
-    pub fn level_order(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<Vec<i32>> {
-        let mut result: Vec<Vec<i32>> = vec![];
+    pub fn right_side_view(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
+        let mut result = vec![];
         let mut deque = VecDeque::new();
         if let Some(node) = root {
             deque.push_back(node);
         }
 
         while !deque.is_empty() {
-            let mut tmp = vec![];
+            result.push(deque.back().unwrap().borrow().val);
             for _ in 0..deque.len() {
                 if let Some(node) = deque.pop_front() {
-                    tmp.push(node.borrow().val);
                     if let Some(left) = node.borrow().left.clone() {
                         deque.push_back(left);
                     }
@@ -27,9 +26,7 @@ impl Solution {
                     }
                 }
             }
-            result.push(tmp);
         }
-
         result
     }
 }

@@ -36,7 +36,6 @@ pub struct TreeNode {
     pub right: Option<Rc<RefCell<TreeNode>>>,
 }
 
-#[allow(dead_code)]
 impl TreeNode {
     #[inline]
     pub fn new(val: i32) -> Self {
