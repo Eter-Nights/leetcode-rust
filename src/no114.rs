@@ -30,3 +30,21 @@ impl Solution {
         }
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use crate::no297::Codec;
+
+    #[test]
+    fn it_works() {
+        let codec = Codec::new();
+        let data = "[1,2,5,3,4,null,6]".to_string();
+        let mut root = codec.deserialize(data);
+        Solution::flatten(&mut root);
+        assert_eq!(
+            codec.serialize(root),
+            "[1,null,2,null,3,null,4,null,5,null,6]".to_string()
+        );
+    }
+}

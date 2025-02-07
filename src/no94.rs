@@ -23,3 +23,18 @@ impl Solution {
         result
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use crate::no297::Codec;
+
+    #[test]
+    fn it_works() {
+        let codec = Codec::new();
+        let data = "[1,null,2,3]".to_string();
+        let root = codec.deserialize(data);
+        let result = Solution::inorder_traversal(root);
+        assert_eq!(result, vec![1, 3, 2]);
+    }
+}

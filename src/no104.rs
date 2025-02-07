@@ -18,3 +18,17 @@ impl Solution {
         }
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use crate::no297::Codec;
+
+    #[test]
+    fn it_works() {
+        let codec = Codec::new();
+        let data = "[3,9,20,null,null,15,7]".to_string();
+        let root = codec.deserialize(data);
+        assert_eq!(Solution::max_depth(root), 3);
+    }
+}

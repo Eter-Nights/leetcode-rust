@@ -30,3 +30,22 @@ impl Solution {
         root
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use crate::no297::Codec;
+
+    #[test]
+    fn it_works() {
+        let codec = Codec::new();
+        let data = "[4,2,7,1,3,6,9]".to_string();
+        let root = codec.deserialize(data);
+        let result = Solution::invert_tree(root);
+        let result = codec.serialize(result);
+        assert_eq!(
+            result,
+            "[4,7,2,9,6,3,1]".to_string()
+        );
+    }
+}

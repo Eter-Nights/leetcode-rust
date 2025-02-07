@@ -25,3 +25,18 @@ impl Solution {
         }
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use crate::no297::Codec;
+
+    #[test]
+    fn it_works() {
+        let codec = Codec::new();
+        let data = "[1,2,3,4,5]".to_string();
+        let root = codec.deserialize(data);
+        let result = Solution::diameter_of_binary_tree(root);
+        assert_eq!(result, 3);
+    }
+}

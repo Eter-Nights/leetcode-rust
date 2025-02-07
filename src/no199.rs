@@ -30,3 +30,18 @@ impl Solution {
         result
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use crate::no297::Codec;
+
+    #[test]
+    fn it_works() {
+        let codec = Codec::new();
+        let data = "[1,2,3,null,5,null,4]".to_string();
+        let root = codec.deserialize(data);
+        let result = Solution::right_side_view(root);
+        assert_eq!(result, vec![1, 3, 4]);
+    }
+}

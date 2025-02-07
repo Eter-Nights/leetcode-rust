@@ -29,3 +29,18 @@ impl Solution {
             && Self::check(p.borrow().right.clone(), q.borrow().left.clone())
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use crate::no297::Codec;
+
+    #[test]
+    fn it_works() {
+        let codec = Codec::new();
+        let data = "[1,2,2,3,4,4,3]".to_string();
+        let root = codec.deserialize(data);
+        let result = Solution::is_symmetric(root);
+        assert_eq!(result, true);
+    }
+}

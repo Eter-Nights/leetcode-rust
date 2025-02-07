@@ -28,3 +28,18 @@ impl Solution {
         0
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use crate::no297::Codec;
+
+    #[test]
+    fn it_works() {
+        let codec = Codec::new();
+        let data = "[3,1,4,null,2]".to_string();
+        let root = codec.deserialize(data);
+        let result = Solution::kth_smallest(root, 1);
+        assert_eq!(result, 1);
+    }
+}

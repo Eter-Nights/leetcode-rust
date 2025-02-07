@@ -24,3 +24,18 @@ impl Solution {
         Some(Rc::new(RefCell::new(node)))
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use crate::no297::Codec;
+
+    #[test]
+    fn it_works() {
+        let codec = Codec::new();
+        let nums = vec![-10, -3, 0, 5, 9];
+        let result = Solution::sorted_array_to_bst(nums);
+        let result = codec.serialize(result);
+        assert_eq!(result, "[0,-3,9,-10,null,5]".to_string());
+    }
+}

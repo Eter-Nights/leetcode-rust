@@ -27,3 +27,18 @@ impl Solution {
         true
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use crate::no297::Codec;
+
+    #[test]
+    fn it_works() {
+        let codec = Codec::new();
+        let data = "[2,1,3]".to_string();
+        let root = codec.deserialize(data);
+        let result = Solution::is_valid_bst(root);
+        assert_eq!(result, true);
+    }
+}
