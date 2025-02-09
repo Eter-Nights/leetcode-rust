@@ -30,3 +30,14 @@ impl Solution {
         super::no21::Solution::merge_two_lists(head, head2)
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn it_works() {
+        let head = ListNode::from_vec(vec![4, 2, 1, 3]);
+        let result = Solution::sort_list(head);
+        assert_eq!(ListNode::transform_vec(result), vec![1, 2, 3, 4]);
+    }
+}

@@ -25,3 +25,14 @@ impl Solution {
         dummy.next
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn it_works() {
+        let head = ListNode::from_vec(vec![1, 2, 3, 4, 5]);
+        let result = Solution::remove_nth_from_end(head, 2);
+        assert_eq!(ListNode::transform_vec(result), vec![1, 2, 3, 5]);
+    }
+}

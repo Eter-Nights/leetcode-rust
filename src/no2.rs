@@ -28,3 +28,18 @@ impl Solution {
         result.next
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn it_works() {
+        let list1 = ListNode::from_vec(vec![9, 9, 9, 9, 9, 9, 9]);
+        let list2 = ListNode::from_vec(vec![9, 9, 9, 9]);
+        let result = Solution::add_two_numbers(list1, list2);
+        assert_eq!(
+            ListNode::transform_vec(result),
+            vec![8, 9, 9, 9, 0, 0, 0, 1]
+        );
+    }
+}

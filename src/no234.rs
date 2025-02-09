@@ -1,5 +1,5 @@
-use std::collections::VecDeque;
 use super::definition::ListNode;
+use std::collections::VecDeque;
 
 struct Solution;
 
@@ -20,8 +20,17 @@ impl Solution {
             } else {
                 break;
             }
-
         }
         vals.is_empty()
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn it_works() {
+        let root = ListNode::from_vec(vec![1, 2, 2, 1]);
+        assert_eq!(Solution::is_palindrome(root), true);
     }
 }

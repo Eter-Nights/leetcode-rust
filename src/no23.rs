@@ -1,7 +1,6 @@
+use super::definition::ListNode;
 use std::cmp::Reverse;
 use std::collections::BinaryHeap;
-use super::definition::ListNode;
-
 
 struct Solution;
 
@@ -26,5 +25,23 @@ impl Solution {
         }
 
         result
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn it_works() {
+        let lists = vec![
+            ListNode::from_vec(vec![1, 4, 5]),
+            ListNode::from_vec(vec![1, 3, 4]),
+            ListNode::from_vec(vec![2, 6]),
+        ];
+        let result = Solution::merge_k_lists(lists);
+        assert_eq!(
+            ListNode::transform_vec(result),
+            vec![1, 1, 2, 3, 4, 4, 5, 6]
+        );
     }
 }
